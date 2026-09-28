@@ -4,5 +4,5 @@ terraform {
 
 resource "local_file" "example" {
   filename = "devops-example.txt"
-  content  = "DevOps Infrastructure Project"
+  content  = "Project: ${var.project_name}"
 }
