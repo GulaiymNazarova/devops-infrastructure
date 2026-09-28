@@ -47,3 +47,13 @@ docker build -t devops-app infrastructure/docker
 Run the container:
 
 docker run -p 8080:80 devops-app
+
+Terraform
+
+Initialize Terraform:
+
+terraform init
+
+Review the planned changes:
+
+terraform plan
