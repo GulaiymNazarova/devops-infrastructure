@@ -57,3 +57,26 @@ terraform init
 Review the planned changes:
 
 terraform plan
+
+Ansible
+
+Run the Ansible playbook:
+
+ansible-playbook infrastructure/ansible/playbook.yml
+
+The playbook creates a test file to demonstrate configuration management.
+
+Kubernetes
+
+Apply the Kubernetes Deployment:
+
+kubectl apply -f infrastructure/kubernetes/deployment.yaml
+
+Apply the Kubernetes Service:
+
+kubectl apply -f infrastructure/kubernetes/service.yaml
+
+Check running resources:
+
+kubectl get pods
+kubectl get services
