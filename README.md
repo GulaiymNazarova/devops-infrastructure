@@ -1,6 +1,6 @@
- DevOps Infrastructure Repository
+DevOps Infrastructure Repository
 
-This project demonstrates a basic DevOps infrastructure setup.
+This project demonstrates a complete DevOps infrastructure setup.
 
 Project Structure
 
