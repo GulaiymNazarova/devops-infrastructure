@@ -1,0 +1,11 @@
+---
+- name: Configure web server
+  hosts: localhost
+  connection: local
+  become: false
+
+  tasks:
+    - name: Create DevOps message file
+      ansible.builtin.copy:
+        content: "Ansible is working!"
+        dest: "./ansible-test.txt"
