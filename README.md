@@ -37,3 +37,13 @@ GitHub Actions checks that the main infrastructure files exist.
 Deployment
 
 The infrastructure files can be used as a starting point for deploying a simple web application.
+
+Docker Usage
+
+Build the Docker image:
+
+docker build -t devops-app infrastructure/docker
+
+Run the container:
+
+docker run -p 8080:80 devops-app
