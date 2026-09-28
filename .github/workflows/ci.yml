@@ -1,4 +1,5 @@
 name: CI
+name: CI
 
 on:
   push:
@@ -19,7 +20,20 @@ jobs:
         run: |
           test -f infrastructure/docker/Dockerfile
           test -f infrastructure/terraform/main.tf
+          test -f infrastructure/terraform/variables.tf
           test -f infrastructure/ansible/playbook.yml
           test -f infrastructure/kubernetes/deployment.yaml
           test -f infrastructure/kubernetes/service.yaml
+          test -f infrastructure/monitoring/prometheus.yml
+          test -f README.md
           echo "Project structure is valid"
+
+      - name: Check Dockerfile
+        run: |
+          grep -q "FROM nginx:alpine" infrastructure/docker/Dockerfile
+          echo "Dockerfile is valid"
+
+      - name: Check README
+        run: |
+          test -s README.md
+          echo "README exists and is not empty"
