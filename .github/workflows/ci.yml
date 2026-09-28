@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - "feature/**"
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check project structure
+        run: |
+          test -f infrastructure/docker/Dockerfile
+          test -f infrastructure/terraform/main.tf
+          test -f infrastructure/ansible/playbook.yml
+          test -f infrastructure/kubernetes/deployment.yaml
+          test -f infrastructure/kubernetes/service.yaml
+          echo "Project structure is valid"
